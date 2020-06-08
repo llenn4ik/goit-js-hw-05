@@ -1,16 +1,18 @@
 'use strict';
 
 //===
-class Account {
-    constructor(login, email) {
-        this.login = login;
-        this.email = email;
-
-        const getInfo = function () {
-            console.log(`login: ${this.login}, email: ${email}`);
-        };
-    }
+const Account = function ({
+    login,
+    email
+}) {
+    this.login = login;
+    this.email = email;
 }
+Account.prototype.getInfo = function () {
+    console.log(`login: ${this.login}, email: ${this.email}`);
+};
+
+
 console.log(Account.prototype.getInfo); // function
 
 const mango = new Account({
